@@ -272,7 +272,7 @@ async function run() {
     let taskDefArn = null;
 
     // Of taskDefContent starts with arn: then we assume it is a task definition ARN
-    core.debug(`taskDefinitionContent: ${taskDefinitionContent}`);
+    core.debug('taskDefinitionContent: ${taskDefinitionContent}');
 
     //
     //
@@ -285,7 +285,7 @@ async function run() {
     } else {
       const taskDefinitionFile = taskDefinitionContent;
 
-      core.debug('Registering the task definition');
+      core.debug('Registering the task definition...');
       const taskDefPath = path.isAbsolute(taskDefinitionFile) ?
         taskDefinitionFile :
         path.join(process.env.GITHUB_WORKSPACE, taskDefinitionFile);
