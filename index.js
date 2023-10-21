@@ -272,7 +272,7 @@ async function run() {
     let taskDefArn = null;
 
     // Of taskDefContent starts with arn: then we assume it is a task definition ARN
-    if (taskDefinitionContent.startsWith("arn:")) {
+    if (taskDefinitionContent.trim().startsWith("arn:")) {
       taskDefArn = taskDefinitionContent;
 
     // 
