@@ -272,11 +272,16 @@ async function run() {
     let taskDefArn = null;
 
     // Of taskDefContent starts with arn: then we assume it is a task definition ARN
-    if (taskDefinitionContent.trim().startsWith("arn:")) {
+    core.debug(`taskDefinitionContent: ${taskDefinitionContent}`);
+
+    //
+    //
+    if (taskDefinitionContent.toLowerCase().includes('arn:aws:')) {
       taskDefArn = taskDefinitionContent;
 
     // 
     // Else we assume it is a task definition file
+    
     } else {
       const taskDefinitionFile = taskDefinitionContent;
 
